@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.html",
-    "client-build": "npm run build --prefix ../client",
-    "start": "npm-run-all client-build  dev"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "client-build": "npm run watch-src --prefix ../client",
+    "start-all": "concurrently \"npm run client-build\"  \"npm run dev\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
