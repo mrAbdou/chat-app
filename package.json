@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.html",
     "client-build": "npm run build --prefix ../client",
-    "start": "npm-run-all client-build  dev"
+    "start-all": "npm-run-all client-build  dev"
   },
   "keywords": [],
   "author": "",
