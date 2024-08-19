@@ -42,4 +42,9 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "build", "index.htm
 //redirect all other routes to the main root /
 app.get("**/*", (req, res) => res.redirect("/"));
 
+app.post("/register", (req, res) => {
+    console.log("data: ",req.body);
+    res.json({status: "ok"});
+})
+
 server.listen(process.env.PORT, () => console.log(`listening on *:${process.env.PORT}`));
